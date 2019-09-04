@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row" style="margin-left: -150px;">
+        <div class="col-7">
+            <div class="formGroup">
+            <!-- the form itself -->
+            <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+            
+                <!-- the input boxes -->
+                <input class="form-control" formControlName="title" placeholder="Title"><br>
+                <input class="form-control"  formControlName="description" placeholder="description"><br>
+                <input class="form-control" formControlName="imageUrl" placeholder="Image URL"><br>
+
+                <button type="submit" class="btn btn-success"> Add Movie </button> <br> <br>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
