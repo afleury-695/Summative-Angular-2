@@ -1,3 +1,14 @@
 button { 
     margin: 10px; 
 }
+
+.hello{ 
+    color: white; 
+    background: blue; 
+}
+
+.list-group-item:active { 
+    background: blue; 
+    color: white; 
+}
+

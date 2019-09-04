@@ -7,28 +7,35 @@
 <div *ngIf="displayList" class="row">
     <div class="col-6">
         <ul class="list-group">
+            <!-- <div *ngIf="!movieIdsBeingEdited" class="backtocolor"> -->
             <li class="list-group-item" *ngFor="let movie of movies; let i = index">
+            
                 <div class="row">
                     <div class="col-6">
-                        <p *ngIf="!movieIdsBeingEdited[i]">{{movie.title}}</p>
+                        
+                        <p *ngIf="!movieIdsBeingEdited[i]" >{{movie.title}}</p>
                         <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="movie.title">
 		                <!-- <p *ngIf="!movieIdsBeingEdited[i]">{{movie.description}}</p> -->
                         <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="movie.description">
                         <!-- <p *ngIf="!movieIdsBeingEdited[i]">{{movie.imageUrl}}</p> -->
                         <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="movie.imageUrl">
                     </div>
+                  
                     <div class="col-6">
                         <button *ngIf="!movieIdsBeingEdited[i]" class="btn btn-danger float-right mx-1"
                             (click)="onDeleteMovie(i)" >X </button> 
                         <button *ngIf="!movieIdsBeingEdited[i]" class="btn btn-warning float-right"
                             (click)="onStartEditMovie(i)">Edit</button> 
 
-                        <button *ngIf="!movieIdsBeingEdited[i]" class=" btn btn-primary float-right mx-1" (click)="onViewMovieDetails(movie)" >Details</button>
+                        <button *ngIf="!movieIdsBeingEdited[i]" class=" btn btn-primary float-right mx-1" (click)="onViewMovieDetails(movie)">Details</button>
+                        <!-- <div *ngIf="movieIdsBeingEdited[i]" class="p-3 mb-2 bg-primary text-white"> </div> -->
                         <button *ngIf="movieIdsBeingEdited[i]" class=" btn btn-info float-right"
                             (click)="onSaveEditMovie(i)">Save</button>
                     </div>
+                   
                 </div>
             </li>
+       
         </ul>
     </div>
     <!-- first shot at display -->
@@ -50,6 +57,7 @@
         </div>
         </div>
 
+   
   
     <!-- <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
